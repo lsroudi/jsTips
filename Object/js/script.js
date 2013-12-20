@@ -14,7 +14,7 @@ var deuxieme_forme_personne = {
 };
 
 
-var valid_personne = {
+var vald_personne = {
     Prenom: "Marie",
     "Nom-de-jeune-fille": "elize" // valid
 };
@@ -63,6 +63,23 @@ var compagnie = Vol["compagnie"] || "AirMaroc";
 //alert(Vol.compagnie.CA);                    //Exception TypeError
 //alert(Vol.compagnie && Vol.compagnie.CA);   //undefined
 
+// update value
 
+console.log(personne.Prenom); // pierre
+
+personne.Prenom = "Paul";
+
+console.log(personne.Prenom); // Paul
+
+personne.status = "Célibataire";
+
+console.log(personne.status);
+
+//Reference
+//Objects are passed by reference. are never copied:
+var x = {}, y = {};
+// x, y refer to a different empty object
+var x = y = {};
+// x, y refer to the same empty object
 
 

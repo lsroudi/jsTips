@@ -49,4 +49,8 @@
 //alert(c); //produce 1
 //alert(d); //produce 200
 
+//Literals
+//we use literals to represent fixed values in JavaScript, not variables.
+
+
 
