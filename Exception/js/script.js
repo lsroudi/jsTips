@@ -1,7 +1,6 @@
 //excepptions
-
 var division = function(a, b) {
-    if (typeof b !== 0) {
+    if (b !== 0) {
         if (typeof a !== 'number' || typeof b !== 'number') {
             throw {
                 name: 'TypeError',
