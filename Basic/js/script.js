@@ -52,5 +52,14 @@
 //Literals
 //we use literals to represent fixed values in JavaScript, not variables.
 
+//Global variable
+//var APP = {};
+//APP.variable = {
+//    "param1": "value1",
+//    "param2": "value2"
+//};
+
+
+
 
 

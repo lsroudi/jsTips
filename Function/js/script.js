@@ -1,4 +1,4 @@
-// Functions
+// anonymous Function
 var addNum = function(num1, num2) {
     return num1 + num2;
 };
