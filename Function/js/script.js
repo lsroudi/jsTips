@@ -14,11 +14,30 @@ console.log(typeof addNum === 'function' && 'addNum est  une fonction'); //addNu
 
 //The Method Invocation Pattern
 var obj = {
-value: 0,
-increment: function (inc) {
-this.value += typeof inc === 'number' ? inc+1 : 1;
-}
+    value: 0,
+    increment: function(inc) {
+        this.value += typeof inc === 'number' ? inc : 1;
+    }
 };
-obj.increment(6); // 1
-document.writeln(obj.value); 
+obj.increment(); // 1
+document.writeln(obj.value);
+obj.increment(6); // 7
+document.writeln(obj.value);
+obj.increment(7); // 14
+document.writeln(obj.value);
+
+//The Function Invocation Pattern
+
+obj.double = function( ) {
+    var that = this;
+// Workaround.
+    var helper = function( ) {
+        that.value = addNum(that.value, that.value);
+    };
+    helper( ); //function invocation
+};
+obj.double( );
+document.writeln(obj.value); //28
+
+
 
