@@ -11,3 +11,14 @@ console.log(typeof addNum === 'function' && 'addNum est  une fonction'); //addNu
 //the function was invoked with the new prefix 
 //and the return value is not an object
 //then this (the new object) is returned instead.
+
+//The Method Invocation Pattern
+var obj = {
+value: 0,
+increment: function (inc) {
+this.value += typeof inc === 'number' ? inc+1 : 1;
+}
+};
+obj.increment(6); // 1
+document.writeln(obj.value); 
+
