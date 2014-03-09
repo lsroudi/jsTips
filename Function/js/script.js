@@ -39,5 +39,15 @@ obj.double = function( ) {
 obj.double( );
 document.writeln(obj.value); //28
 
+//The Constructor Invocation Pattern
 
+var init = function(num){
+  this.value = num;
+};
+init.prototype.getValue = function(){
+    return this.value;
+};
+
+var i = new init(4);
+document.writeln(i.getValue( )); // 4
 
