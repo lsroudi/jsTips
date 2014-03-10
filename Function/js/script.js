@@ -39,7 +39,7 @@ obj.double = function( ) {
 obj.double( );
 document.writeln(obj.value); //28
 
-//The Constructor Invocation Pattern
+//The constructor invocation Pattern
 
 var init = function(num){
   this.value = num;
@@ -50,4 +50,10 @@ init.prototype.getValue = function(){
 
 var i = new init(4);
 document.writeln(i.getValue( )); // 4
+
+//The apply invocation Pattern
+var args = [3, 4];
+var sum = addNum.apply(null, args);
+document.writeln(sum); // 7
+
 
