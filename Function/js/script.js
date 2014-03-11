@@ -57,3 +57,15 @@ var sum = addNum.apply(null, args);
 document.writeln(sum); // 7
 
 
+//Arguments
+
+var add = function (){
+  var i, sum = 0;
+  for(i = 0; i < arguments.length; i += 1){
+      sum += arguments[i];
+  }
+  return sum;
+};
+
+document.writeln(add(1,2,7)); // 10
+
