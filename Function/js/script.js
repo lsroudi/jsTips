@@ -81,4 +81,10 @@ return Math[this < 0 ? 'ceil' : 'floor'](this);
 });
 document.writeln((-7 / 2).integer( )); // -3
 
+String.method('trim', function ( ) {
+return this.replace(/^\s+|\s+$/g, '');
+});
+document.writeln('"' + " string   ".trim( ) + '"'); //"string"
+
+
 
