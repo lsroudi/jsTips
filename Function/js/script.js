@@ -86,5 +86,16 @@ return this.replace(/^\s+|\s+$/g, '');
 });
 document.writeln('"' + " string   ".trim( ) + '"'); //"string"
 
+//Recursion
+var factorial = function factorial(i, a) {
+console.log(a);
+a = a || 1;
+console.log(i);
+if (i < 2) {
+return a;
+}
+return factorial(i - 1, a * i);
 
+};
+document.writeln(factorial(4));// 24 // 4,1 => 4-1,1*4=> 2,4*3 =>1,4*3*2
 
