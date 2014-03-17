@@ -41,10 +41,10 @@ document.writeln(obj.value); //28
 
 //The constructor invocation Pattern
 
-var init = function(num){
-  this.value = num;
+var init = function(num) {
+    this.value = num;
 };
-init.prototype.getValue = function(){
+init.prototype.getValue = function() {
     return this.value;
 };
 
@@ -59,43 +59,55 @@ document.writeln(sum); // 7
 
 //Arguments
 
-var add = function (){
-  var i, sum = 0;
-  for(i = 0; i < arguments.length; i += 1){
-      sum += arguments[i];
-  }
-  return sum;
+var add = function() {
+    var i, sum = 0;
+    for (i = 0; i < arguments.length; i += 1) {
+        sum += arguments[i];
+    }
+    return sum;
 };
 
-document.writeln(add(1,2,7)); // 10
+document.writeln(add(1, 2, 7)); // 10
 
 //Augmenting Types
 
-Function.prototype.method = function (name, func) {
-this.prototype[name] = func;
-return this;
+Function.prototype.method = function(name, func) {
+    this.prototype[name] = func;
+    return this;
 };
 
-Number.method('integer', function ( ) {
-return Math[this < 0 ? 'ceil' : 'floor'](this);
+Number.method('integer', function( ) {
+    return Math[this < 0 ? 'ceil' : 'floor'](this);
 });
 document.writeln((-7 / 2).integer( )); // -3
 
-String.method('trim', function ( ) {
-return this.replace(/^\s+|\s+$/g, '');
+String.method('trim', function( ) {
+    return this.replace(/^\s+|\s+$/g, '');
 });
 document.writeln('"' + " string   ".trim( ) + '"'); //"string"
 
 //Recursion
 var factorial = function factorial(i, a) {
-console.log(a);
-a = a || 1;
-console.log(i);
-if (i < 2) {
-return a;
-}
-return factorial(i - 1, a * i);
+    a = a || 1;
+    if (i < 2) {
+        return a;
+    }
+    return factorial(i - 1, a * i);
 
 };
 document.writeln(factorial(4));// 24 // 4,1 => 4-1,1*4=> 2,4*3 =>1,4*3*2
+
+//scope
+var foo = function( ) {
+    var a = 2, b = 8;
+    var bar = function( ) {
+        var b = 5, c = 18;
+        a += b + c;
+        console.log(a);
+    };
+    bar( );
+};
+foo(); // 25
+
+
 
