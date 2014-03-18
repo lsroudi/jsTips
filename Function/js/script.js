@@ -109,5 +109,5 @@ var foo = function( ) {
 };
 foo(); // 25
 
-
+//Closure
 
