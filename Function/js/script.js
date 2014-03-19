@@ -109,5 +109,17 @@ var foo = function( ) {
 };
 foo(); // 25
 
+
+
 //Closure
 
+var testc = function(){
+    var hidden = 10;
+    return function addtohidden(params){
+        return hidden + params;
+    };    
+};
+var preadd = testc();
+var result = preadd(2);
+//the function has access to the context in which it was created.
+document.writeln(result);//12
