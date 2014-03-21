@@ -113,13 +113,28 @@ foo(); // 25
 
 //Closure
 
-var testc = function(){
+var testc = function() {
     var hidden = 10;
-    return function addtohidden(params){
+    return function addtohidden(params) {
         return hidden + params;
-    };    
+    };
 };
 var preadd = testc();
 var result = preadd(2);
 //the function has access to the context in which it was created.
 document.writeln(result);//12
+
+var fade = function(node) {
+    var level = 1;
+    var step = function( ) {
+        var hex = level.toString(16);
+//        console.log(hex);
+        node.style.backgroundColor = '#FFFF' + hex + hex;
+        if (level < 15) {
+            level += 1;
+            setTimeout(step, 100);
+        }
+    };
+    setTimeout(step, 100);
+};
+fade(document.body);
