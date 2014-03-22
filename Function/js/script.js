@@ -141,22 +141,21 @@ fade(document.body);
 
 
 String.method('custom', function() {
-// The entity table. It maps entity names to
-// characters.
     var entity = {
         fs: '<strong>',
-        ls: '</strong>'
+        ls: '</strong>',
+        that: this
 
     };
     var boldme = function() {
-        return entity['fs'] + a + entity['ls'];
+        return entity['fs'] + entity['that'] + entity['ls'];
     };
     var public = {
         bold: boldme
     };
     return public;
-}());
+});
 
-document.writeln('lsroudi'.custom.bold( ));
+document.writeln('lsroudi'.custom().bold( ));
 
 
