@@ -138,3 +138,25 @@ var fade = function(node) {
     setTimeout(step, 100);
 };
 fade(document.body);
+
+
+String.method('custom', function() {
+// The entity table. It maps entity names to
+// characters.
+    var entity = {
+        fs: '<strong>',
+        ls: '</strong>'
+
+    };
+    var boldme = function() {
+        return entity['fs'] + a + entity['ls'];
+    };
+    var public = {
+        bold: boldme
+    };
+    return public;
+}());
+
+document.writeln('lsroudi'.custom.bold( ));
+
+
