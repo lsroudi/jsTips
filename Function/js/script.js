@@ -156,6 +156,6 @@ String.method('custom', function() {
     return public;
 });
 
-document.writeln('lsroudi'.custom().bold( ));
+document.writeln('lsroudi'.custom().bold( )); // <strong>lsroudi</strong>
 
 
