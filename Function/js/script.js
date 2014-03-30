@@ -178,4 +178,8 @@ var serial_maker = function( ) {
 };
 
 
-
+// Cascade
+getElementsByClassName('className').
+        changecolor("#fff").
+        width(100).
+        height(100);
