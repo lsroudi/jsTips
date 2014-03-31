@@ -179,7 +179,21 @@ var serial_maker = function( ) {
 
 
 // Cascade
-getElementsByClassName('className').
-        changecolor("#fff").
-        width(100).
-        height(100);
+//document.getElementsByClassName('className').
+//        ccolor("#fff").
+//        width(100).
+//        height(100);
+// Curry
+
+Function.method('curry', function( ) {
+    var args = arguments, that = this;
+    return function( ) {
+        return that.apply(null, args.concat(arguments));
+    };
+});
+var addNum = function(num1, num2) {
+    return num1 + num2;
+};
+
+var add1 = addNum.curry(5);
+console.log(add1(10));
